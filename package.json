@@ -15,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "git config --global core.autocrlf input && git rm --cached -r . && git reset --hard"
   },
   "eslintConfig": {
     "extends": [
