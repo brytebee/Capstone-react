@@ -1,3 +1,9 @@
-const App = () => <div>Hello</div>;
+import Home from './pages/Home';
+
+const App = () => (
+  <div>
+    <Home />
+  </div>
+);
 
 export default App;
