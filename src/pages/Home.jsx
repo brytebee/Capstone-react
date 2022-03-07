@@ -6,7 +6,10 @@ import { getCountriesFromAPI } from '../redux/countries/countries';
 const Home = () => {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.countries);
-  // const [loading, setLoading] = useState(false);
+  let total = 0;
+  allCountries.forEach((counrty) => {
+    total += counrty.today_confirmed;
+  });
 
   useEffect(() => {
     dispatch(getCountriesFromAPI());
@@ -16,7 +19,7 @@ const Home = () => {
     <div>
       {' '}
       <h1>All countries</h1>
-      {/* <p>{total}</p> */}
+      <p>{total}</p>
       {allCountries.length <= 0 ? (
         <div className="spinner">
           <ScaleLoader color="#4369B2" />
