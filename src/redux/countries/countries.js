@@ -7,21 +7,18 @@ const getCountries = (payload) => ({
 
 export const getCountriesFromAPI = () => async (dispatch) => {
   const date = new Date().toISOString().split('T')[0];
+  const url = `https://api.covid19tracking.narrativa.com/api/${date}`;
   const dateString = date.toString();
-  const req = await fetch(
-    `https://api.covid19tracking.narrativa.com/api/${date}`,
-  );
-
-  const data = await req.json();
-  const res = Object.values(data.data.dates[dateString].countries).join();
-  console.log(res);
-  dispatch(getCountries(res));
+  const req = await fetch(url);
+  const res = await req.json();
+  const data = Object.values(res.dates[dateString].countries);
+  dispatch(getCountries(data));
 };
 
 const countries = (state = [], action) => {
   switch (action.type) {
     case GET_COUNTRIES:
-      return [...state, action.payload];
+      return action.payload;
     default:
       return state;
   }
