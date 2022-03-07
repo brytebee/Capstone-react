@@ -59,6 +59,9 @@ To the:
 - Stand-up team, and
 - Morning team
 
+**Special Thanks to Nelson Sakwa**
+The original design idea is by [Nelson Sakwa on Behance.](https://www.behance.net/sakwadesignstudio)
+
 Thanks for all contributions and reviews.
 
 ## 📝 License
