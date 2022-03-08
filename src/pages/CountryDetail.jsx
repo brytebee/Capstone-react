@@ -33,13 +33,10 @@ const CountryDetail = () => {
     fetchCountryData();
   }, []);
 
-  console.log(countryDetails);
-
   return (
     <div>
       <IoIosArrowBack onClick={handleBack} />
       {!countryDetails.length && <Loader />}
-      {console.log(countryDetails.regions)}
       {countryDetails.map((info) => (
         <div key={info.id}>
           {info.regions.length > 0 ? (
