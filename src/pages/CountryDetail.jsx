@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import Loader from '../components/Loader';
 
@@ -21,7 +21,7 @@ const CountryDetail = () => {
   const fetchCountryData = async () => {
     const date = new Date().toISOString().split('T')[0];
     const req = await fetch(
-      `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`
+      `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`,
     );
     const res = await req.json();
     const dateString = date.toString();
@@ -42,15 +42,33 @@ const CountryDetail = () => {
       {console.log(countryDetails.regions)}
       {countryDetails.map((info) => (
         <div key={info.id}>
-          <h2>{info.name}</h2>
-          <p>{info.date}</p>
-          <p>{`Today Confirmed: ${info.today_confirmed}`}</p>
-          <p>{`Today Revovered: ${info.today_recovered}`}</p>
-          <p>{`Today Deaths: ${info.today_deaths}`}</p>
-          <p>{`Today New Confirmed: ${info.today_new_confirmed}`}</p>
-          <p>{`Today New Deaths: ${info.today_new_deaths}`}</p>
-          <p>{`Today New Confirmed: ${info.today_new_open_cases}`}</p>
-          <p>{`Source: ${info.source}`}</p>
+          {info.regions.length > 0 ? (
+            info.regions.map((region) => (
+              <Link
+                key={region.id}
+                to={{
+                  pathname: `${region.name}`,
+                }}
+              >
+                <div>
+                  <h5>{region.name}</h5>
+                  <p>{region.today_confirmed}</p>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <div>
+              <h2>{info.name}</h2>
+              <p>{info.date}</p>
+              <p>{`Today Confirmed: ${info.today_confirmed}`}</p>
+              <p>{`Today Revovered: ${info.today_recovered}`}</p>
+              <p>{`Today Deaths: ${info.today_deaths}`}</p>
+              <p>{`Today New Confirmed: ${info.today_new_confirmed}`}</p>
+              <p>{`Today New Deaths: ${info.today_new_deaths}`}</p>
+              <p>{`Today New Confirmed: ${info.today_new_open_cases}`}</p>
+              <p>{`Source: ${info.source}`}</p>
+            </div>
+          )}
         </div>
       ))}
     </div>
