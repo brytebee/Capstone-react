@@ -1,0 +1,77 @@
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { IoIosArrowBack } from 'react-icons/io';
+import Loader from '../components/Loader';
+
+const RegionDetail = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [regionDetails, setRegionDetails] = useState([]);
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+
+  const region = location.pathname
+    .match(/[a-zA-Z0-9]/gm)
+    .join('')
+    .replaceAll('20', ' ');
+
+  const fetchRegionData = async () => {
+    const date = new Date().toISOString().split('T')[0];
+    const req = await fetch(
+      `https://api.covid19tracking.narrativa.com/api/${date}/country/${region}`,
+    );
+    const res = await req.json();
+    const dateString = date.toString();
+    const data = Object.values(res.dates[dateString].countries);
+    if (data) setRegionDetails(data);
+  };
+
+  useEffect(() => {
+    fetchRegionData();
+  }, []);
+
+  console.log(regionDetails);
+
+  return (
+    <div>
+      <IoIosArrowBack onClick={handleBack} />
+      {!regionDetails.length && <Loader />}
+      {regionDetails.map((info) => (
+        <div key={info.id}>
+          {info.sub_regions.length > 0 ? (
+            info.sub_regions.map((sub_region) => (
+              <Link
+                key={sub_region.id}
+                to={{
+                  pathname: `${sub_region.name}`,
+                }}
+              >
+                <div>
+                  <h5>{sub_region.name}</h5>
+                  <p>{sub_region.today_confirmed}</p>
+                </div>
+              </Link>
+            ))
+          ) : (
+            <div>
+              <h2>{info.name}</h2>
+              <p>{info.date}</p>
+              <p>{`Today Confirmed: ${info.today_confirmed}`}</p>
+              <p>{`Today Revovered: ${info.today_recovered}`}</p>
+              <p>{`Today Deaths: ${info.today_deaths}`}</p>
+              <p>{`Today New Confirmed: ${info.today_new_confirmed}`}</p>
+              <p>{`Today New Deaths: ${info.today_new_deaths}`}</p>
+              <p>{`Today New Confirmed: ${info.today_new_open_cases}`}</p>
+              <p>{`Source: ${info.source}`}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default RegionDetail;
