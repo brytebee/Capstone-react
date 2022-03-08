@@ -21,26 +21,21 @@ const Home = () => {
     <div>
       {' '}
       <h1>All countries</h1>
-      <p>{total}</p>
-      {allCountries.length <= 0 ? (
-        <Loader />
-      ) : (
-        allCountries.map((country) => (
-          <Link
-            key={country.id}
-            to={{
-              pathname: `${country.name}`,
-              state: country,
-              standard: 'double',
-            }}
-          >
-            <div>
-              <h5>{country.name}</h5>
-              <p>{country.today_confirmed}</p>
-            </div>
-          </Link>
-        ))
-      )}
+      <p>{new Intl.NumberFormat().format(total)}</p>
+      {!allCountries.length && <Loader />}
+      {allCountries.map((country) => (
+        <Link
+          key={country.id}
+          to={{
+            pathname: `${country.name}`,
+          }}
+        >
+          <div>
+            <h5>{country.name}</h5>
+            <p>{country.today_confirmed}</p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 };
