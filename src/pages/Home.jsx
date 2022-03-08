@@ -27,7 +27,14 @@ const Home = () => {
         </div>
       ) : (
         allCountries.map((country) => (
-          <Link key={country.id} to={`/${country.name}`}>
+          <Link
+            key={country.id}
+            to={{
+              pathname: `${country.name}`,
+              state: country,
+              standard: 'double',
+            }}
+          >
             <div>
               <h5>{country.name}</h5>
               <p>{country.today_confirmed}</p>
