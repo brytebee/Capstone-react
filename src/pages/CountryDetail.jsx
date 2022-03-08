@@ -27,14 +27,11 @@ const CountryDetail = () => {
     const dateString = date.toString();
     const data = Object.values(res.dates[dateString].countries);
     if (data) setCountryDetails(data);
-    console.log('data', data);
   };
 
   useEffect(() => {
     fetchCountryData();
   }, []);
-
-  console.log('after', countryDetails);
 
   return (
     <div>
