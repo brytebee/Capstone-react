@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import { getCountriesFromAPI } from '../redux/countries/countries';
 
@@ -26,10 +27,12 @@ const Home = () => {
         </div>
       ) : (
         allCountries.map((country) => (
-          <div key={country.id}>
-            <h5>{country.name}</h5>
-            <p>{country.today_confirmed}</p>
-          </div>
+          <Link key={country.id} to={`/${country.name}`}>
+            <div>
+              <h5>{country.name}</h5>
+              <p>{country.today_confirmed}</p>
+            </div>
+          </Link>
         ))
       )}
     </div>
