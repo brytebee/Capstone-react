@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
-import { fetchCountryData } from '../redux/countries/country';
+import Loader from '../components/Loader';
 
 const CountryDetail = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [countryDetails, setCountryDetails] = useState([]);
 
   const handleBack = () => {
     navigate('/');
@@ -16,23 +18,37 @@ const CountryDetail = () => {
     .join('')
     .replaceAll('20', ' ');
 
+  const fetchCountryData = async () => {
+    const date = new Date().toISOString().split('T')[0];
+    const req = await fetch(
+      `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`,
+    );
+    const res = await req.json();
+    const dateString = date.toString();
+    const data = Object.values(res.dates[dateString].countries);
+    if (data) setCountryDetails(data);
+    console.log('data', data);
+  };
+
   useEffect(() => {
-    fetchCountryData(country);
+    fetchCountryData();
   }, []);
+
+  console.log('after', countryDetails);
 
   return (
     <div>
       <IoIosArrowBack onClick={handleBack} />
-      <h2>CountryDetail</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sequi modi
-        officia necessitatibus atque cumque error recusandae, reiciendis nam,
-        architecto facere nihil explicabo voluptates, quos possimus sunt animi
-        beatae veritatis quis quam quaerat aliquid minus distinctio corporis?
-        Rerum ipsa totam consectetur iusto tenetur recusandae, illo ab natus
-        velit magnam? Reprehenderit est repellat quasi laudantium aliquid
-        officiis doloribus eos, sequi repudiandae.
-      </p>
+      {countryDetails.length <= 0 ? (
+        <Loader />
+      ) : (
+        countryDetails.map((info) => (
+          <div key={info.id}>
+            <h2>{info.name}</h2>
+            <p>{info.id}</p>
+          </div>
+        ))
+      )}
     </div>
   );
 };

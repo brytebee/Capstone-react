@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import ScaleLoader from 'react-spinners/ScaleLoader';
+import Loader from '../components/Loader';
 import { getCountriesFromAPI } from '../redux/countries/countries';
 
 const Home = () => {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.countries);
+
   let total = 0;
   allCountries.forEach((counrty) => {
     total += counrty.today_confirmed;
@@ -22,9 +23,7 @@ const Home = () => {
       <h1>All countries</h1>
       <p>{total}</p>
       {allCountries.length <= 0 ? (
-        <div className="spinner">
-          <ScaleLoader color="#4369B2" />
-        </div>
+        <Loader />
       ) : (
         allCountries.map((country) => (
           <Link

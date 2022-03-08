@@ -8,12 +8,12 @@ const getCountry = (payload) => ({
 export const fetchCountryData = (country) => async (dispatch) => {
   const date = new Date().toISOString().split('T')[0];
   const url = `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`;
-  // const dateString = date.toString();
+  const dateString = date.toString();
   const req = await fetch(url);
   console.log(req);
-  // const res = await req.json();
-  // const data = Object.values(res.dates[dateString].countries);
-  dispatch(getCountry(req));
+  const res = await req.json();
+  const data = Object.values(res.dates[dateString].countries);
+  dispatch(getCountry(data));
 };
 
 const country = (state = [], action) => {
