@@ -13,16 +13,20 @@ const RegionDetail = () => {
     navigate(-1);
   };
 
+  const country = location.pathname.match('/(.*)/');
+  console.log(country);
+
   const region = location.pathname
     .match(/[a-zA-Z0-9]/gm)
     .join('')
     .replaceAll('20', ' ');
 
+  console.log('location', location, 'region', region);
+
   const fetchRegionData = async () => {
     const date = new Date().toISOString().split('T')[0];
-    const req = await fetch(
-      `https://api.covid19tracking.narrativa.com/api/${date}/country/${region}`,
-    );
+    const req = await fetch();
+    // `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}/region/${region}`
     const res = await req.json();
     const dateString = date.toString();
     const data = Object.values(res.dates[dateString].countries);
@@ -42,16 +46,16 @@ const RegionDetail = () => {
       {regionDetails.map((info) => (
         <div key={info.id}>
           {info.sub_regions.length > 0 ? (
-            info.sub_regions.map((sub_region) => (
+            info.sub_regions.map((subRegion) => (
               <Link
-                key={sub_region.id}
+                key={subRegion.id}
                 to={{
-                  pathname: `${sub_region.name}`,
+                  pathname: `${subRegion.name}`,
                 }}
               >
                 <div>
-                  <h5>{sub_region.name}</h5>
-                  <p>{sub_region.today_confirmed}</p>
+                  <h5>{subRegion.name}</h5>
+                  <p>{subRegion.today_confirmed}</p>
                 </div>
               </Link>
             ))
