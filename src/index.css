@@ -1,3 +1,20 @@
 body {
   margin: 0;
 }
+
+img {
+  width: 500px;
+}
+
+:root {
+  --primary: #5889de;
+  --primary-light: #3f62a4;
+  --primary-dark: #395e9a;
+  --dark: #35548b;
+  --global-padding: 1.1rem;
+}
+
+.flex-btw {
+  display: flex;
+  justify-content: space-between;
+}

@@ -24,7 +24,7 @@ const CountryDetail = () => {
   const fetchCountryData = async () => {
     const date = new Date().toISOString().split('T')[0];
     const req = await fetch(
-      `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`
+      `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`,
     );
     const res = await req.json();
     const dateString = date.toString();

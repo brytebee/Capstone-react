@@ -1,3 +1,5 @@
+export const navbarDate = new Date();
+
 const CountryCode = {
   Afghanistan: 'AF',
   Albania: 'AL',

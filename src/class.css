@@ -2,3 +2,15 @@
   padding-left: 50%;
   padding-top: 10%;
 }
+
+.navbarista {
+  background-color: var(--primary-dark);
+  min-height: 60px;
+  align-items: center;
+  padding: var(--global-padding);
+}
+
+.topper {
+  padding: var(--global-padding);
+  background-color: var(--primary-light);
+}
