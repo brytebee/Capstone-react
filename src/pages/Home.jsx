@@ -43,42 +43,44 @@ const Home = () => {
         <div>STATS BY COUNTRIES</div>
         <input type="text" placeholder="Enter Country" onChange={handleSearch} />
       </div>
-      {!allCountries.length && <Loader />}
-      {filterCountries.slice(0, 8).length > 0
-        ? filterCountries.map((country) => {
-          src = countryMapSrc(country.name);
-          return (
-            <Link
-              key={country.id}
-              to={{
-                pathname: `${country.name}`,
-              }}
-            >
-              <div>
-                <img src={countryMapSrc(country.name)} alt={`${country.name} map`} />
-                <h5>{country.name}</h5>
-                <p>{country.today_confirmed}</p>
-              </div>
-            </Link>
-          );
-        })
-        : allCountries.slice(0, 8).map((country) => {
-          src = countryMapSrc(country.name);
-          return (
-            <Link
-              key={country.id}
-              to={{
-                pathname: `${country.name}`,
-              }}
-            >
-              <div>
-                <img src={countryMapSrc(country.name)} alt={`${country.name} map`} />
-                <h5>{country.name}</h5>
-                <p>{country.today_confirmed}</p>
-              </div>
-            </Link>
-          );
-        })}
+      <div className="main-data">
+        {!allCountries.length && <Loader />}
+        {filterCountries.length > 0
+          ? filterCountries.slice(0, 8).map((country) => {
+            src = countryMapSrc(country.name);
+            return (
+              <Link
+                key={country.id}
+                to={{
+                  pathname: `${country.name}`,
+                }}
+              >
+                <div>
+                  <img src={src} alt={`${country.name} map`} />
+                  <h5>{country.name}</h5>
+                  <p>{country.today_confirmed}</p>
+                </div>
+              </Link>
+            );
+          })
+          : allCountries.slice(0, 8).map((country) => {
+            src = countryMapSrc(country.name);
+            return (
+              <Link
+                key={country.id}
+                to={{
+                  pathname: `${country.name}`,
+                }}
+              >
+                <div>
+                  <img src={src} alt={`${country.name} map`} />
+                  <h5>{country.name}</h5>
+                  <p>{country.today_confirmed}</p>
+                </div>
+              </Link>
+            );
+          })}
+      </div>
     </div>
   );
 };

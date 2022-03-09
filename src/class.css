@@ -12,10 +12,23 @@
 
 .topper {
   padding: var(--global-padding);
-  background-color: var(--primary-light);
+  background-color: var(--primary);
 }
 
 .sub-header {
   background-color: var(--dark);
   padding: var(--global-padding);
+}
+
+.main-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  grid-auto-rows: minmax(100px, auto);
+  background-color: var(--primary-dark);
+  padding: 30px;
+}
+
+.main-data:nth-child(odd) {
+  background-color: var(--primary-dark);
 }
