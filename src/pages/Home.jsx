@@ -46,7 +46,7 @@ const Home = () => {
       <div className="main-data">
         {!allCountries.length && <Loader />}
         {filterCountries.length > 0
-          ? filterCountries.slice(0, 8).map((country) => {
+          ? filterCountries.slice(0, 10).map((country) => {
             src = countryMapSrc(country.name);
             return (
               <Link
@@ -63,7 +63,7 @@ const Home = () => {
               </Link>
             );
           })
-          : allCountries.slice(0, 8).map((country) => {
+          : allCountries.slice(0, 10).map((country) => {
             src = countryMapSrc(country.name);
             return (
               <Link

@@ -1,9 +1,10 @@
 body {
   margin: 0;
+  background-color: var(--primary);
 }
 
 img {
-  width: 500px;
+  width: 200px;
 }
 
 :root {

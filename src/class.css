@@ -22,7 +22,7 @@
 
 .main-data {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 50px;
   grid-auto-rows: minmax(100px, auto);
   background-color: var(--primary-dark);
@@ -31,4 +31,14 @@
 
 .main-data:nth-child(odd) {
   background-color: var(--primary-dark);
+}
+
+@media screen and (max-width: 426px) {
+  .main-data {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    width: 150px;
+  }
 }
