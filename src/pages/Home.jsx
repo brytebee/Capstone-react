@@ -39,12 +39,14 @@ const Home = () => {
           <p>{new Intl.NumberFormat().format(total)}</p>
         </div>
       </div>
-      <input type="text" placeholder="Enter Country" onChange={handleSearch} />
+      <div className="sub-header flex-btw">
+        <div>STATS BY COUNTRIES</div>
+        <input type="text" placeholder="Enter Country" onChange={handleSearch} />
+      </div>
       {!allCountries.length && <Loader />}
-      {filterCountries.slice(0, 1).length > 0
+      {filterCountries.slice(0, 8).length > 0
         ? filterCountries.map((country) => {
           src = countryMapSrc(country.name);
-          console.log(1, src);
           return (
             <Link
               key={country.id}
@@ -60,9 +62,8 @@ const Home = () => {
             </Link>
           );
         })
-        : allCountries.slice(0, 1).map((country) => {
+        : allCountries.slice(0, 8).map((country) => {
           src = countryMapSrc(country.name);
-          console.log(2, src);
           return (
             <Link
               key={country.id}

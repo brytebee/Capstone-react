@@ -14,3 +14,8 @@
   padding: var(--global-padding);
   background-color: var(--primary-light);
 }
+
+.sub-header {
+  background-color: var(--dark);
+  padding: var(--global-padding);
+}
