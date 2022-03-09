@@ -10,10 +10,10 @@ const RegionDetail = () => {
   const [regionDetails, setRegionDetails] = useState([]);
 
   const handleBack = () => {
-    navigate(-1);
+    navigate('/:country');
   };
 
-  const country = location.pathname.match('/(.*)/');
+  const country = location.pathname.match('/(.*)/')[1];
   console.log(country);
 
   const region = location.pathname

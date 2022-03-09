@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import Loader from '../components/Loader';
+import countryMapSrc from '../redux/countries/countryCodes';
 
 const CountryDetail = () => {
   const navigate = useNavigate();
@@ -18,10 +19,12 @@ const CountryDetail = () => {
     .join('')
     .replaceAll('20', ' ');
 
+  const src = countryMapSrc(country);
+
   const fetchCountryData = async () => {
     const date = new Date().toISOString().split('T')[0];
     const req = await fetch(
-      `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`,
+      `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`
     );
     const res = await req.json();
     const dateString = date.toString();
@@ -48,6 +51,7 @@ const CountryDetail = () => {
                 }}
               >
                 <div>
+                  <img src={src} alt={`${region.name} map`} />
                   <h5>{region.name}</h5>
                   <p>{region.today_confirmed}</p>
                 </div>
@@ -56,6 +60,7 @@ const CountryDetail = () => {
           ) : (
             <div>
               <h2>{info.name}</h2>
+              <img src={src} alt={`${info.name} map`} />
               <p>{info.date}</p>
               <p>{`Today Confirmed: ${info.today_confirmed}`}</p>
               <p>{`Today Revovered: ${info.today_recovered}`}</p>
