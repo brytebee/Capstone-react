@@ -17,6 +17,10 @@
   position: relative;
 }
 
+.world-map {
+  width: 24rem;
+}
+
 .sub-header {
   background-color: var(--dark);
   padding: var(--global-padding);
@@ -101,7 +105,6 @@
 
   .world-map {
     width: 20rem;
-    z-index: 100;
   }
 
   .country-map {

@@ -9,7 +9,7 @@ import countryMapSrc from '../redux/countries/countryCodes';
 const map = 'https://raw.githubusercontent.com/rachidelaid/worldMaps/main/maps/world/vector.svg';
 let src = '';
 
-const formatNumber = (num) => new Intl.NumberFormat().format(num);
+export const formatNumber = (num) => new Intl.NumberFormat().format(num);
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -82,7 +82,7 @@ const Home = () => {
                   <img src={src} alt={`${country.name} map`} />
                   <BsArrowRightCircle />
                   <h5>{country.name}</h5>
-                  <p>{country.today_confirmed}</p>
+                  <p>{formatNumber(country.today_confirmed)}</p>
                 </div>
               </Link>
             );
