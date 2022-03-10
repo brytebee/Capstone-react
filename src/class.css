@@ -145,4 +145,8 @@
   .main-data a:nth-child(odd) {
     background-color: var(--primary-dark);
   }
+
+  .four-oh-four-img {
+    width: 15rem;
+  }
 }
