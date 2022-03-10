@@ -9,6 +9,8 @@ import countryMapSrc from '../redux/countries/countryCodes';
 const map = 'https://raw.githubusercontent.com/rachidelaid/worldMaps/main/maps/world/vector.svg';
 let src = '';
 
+const formatNumber = (num) => new Intl.NumberFormat().format(num);
+
 const Home = () => {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.countries);
