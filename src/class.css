@@ -58,7 +58,7 @@
   top: -5%;
   left: 50%;
   transform: translate(-50%, -8%);
-  width: 200px;
+  color: #170336;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -100,9 +100,13 @@
   }
 
   .world-map {
-    color: rgb(90, 24, 24);
     width: 20rem;
-    z-index: -100;
+    z-index: 100;
+  }
+
+  .country-map {
+    width: 10rem;
+    z-index: 100;
   }
 
   .topper-text {

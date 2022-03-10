@@ -52,7 +52,7 @@ const CountryDetail = () => {
               <h2 className="country-name">{info.name}</h2>
               <div className="topper flex-btw country-details-top">
                 <img className="country-map" src={src} alt={`${info.name} map`} />
-                <div>
+                <div className="topper-text">
                   <h6>{`${info.name} Stats`}</h6>
                   <p>{info.date}</p>
                   <p>{info.today_confirmed}</p>
