@@ -29,6 +29,8 @@ const Home = () => {
     total += counrty.today_confirmed;
   });
 
+  total = formatNumber(total);
+
   useEffect(() => {
     dispatch(getCountriesFromAPI());
   }, []);
@@ -39,7 +41,7 @@ const Home = () => {
         <div><img className="world-map" src={map} alt="world map" /></div>
         <div className="topper-text">
           <h1>All countries</h1>
-          <p>{new Intl.NumberFormat().format(total)}</p>
+          <p>{total}</p>
         </div>
       </div>
       <div className="sub-header flex-btw">
@@ -62,7 +64,7 @@ const Home = () => {
                   <img src={src} alt={`${country.name} map`} />
                   <BsArrowRightCircle />
                   <h5>{country.name}</h5>
-                  <p>{country.today_confirmed}</p>
+                  <p>{formatNumber(country.today_confirmed)}</p>
                 </div>
               </Link>
             );
