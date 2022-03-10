@@ -94,6 +94,16 @@
   color: white;
 }
 
+.four-oh-four {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.four-oh-four-img {
+  width: 40rem;
+}
+
 @media screen and (max-width: 426px) {
   .main-data {
     grid-template-columns: repeat(2, 1fr);
