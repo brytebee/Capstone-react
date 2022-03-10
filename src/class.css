@@ -17,17 +17,6 @@
   position: relative;
 }
 
-.topper-text {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  padding: 25% 5%;
-  text-align: right;
-  background: linear-gradient(to right, var(--primary), var(--dark));
-}
-
 .sub-header {
   background-color: var(--dark);
   padding: var(--global-padding);
@@ -69,6 +58,10 @@
   top: -5%;
   left: 50%;
   transform: translate(-50%, -8%);
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .country-details-top {
@@ -110,6 +103,17 @@
     color: rgb(90, 24, 24);
     width: 20rem;
     z-index: -100;
+  }
+
+  .topper-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    padding: 25% 5%;
+    text-align: right;
+    background: linear-gradient(to right, var(--primary), var(--dark));
   }
 
   .stats p:nth-child(odd) {
