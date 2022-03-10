@@ -49,7 +49,6 @@ const CountryDetail = () => {
                 }}
               >
                 <div>
-                  {/* <img src={src} alt={`${region.name} map`} /> */}
                   <h5>{region.name}</h5>
                   <p>{region.today_confirmed}</p>
                 </div>
