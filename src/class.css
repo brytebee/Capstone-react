@@ -13,6 +13,19 @@
 .topper {
   padding: var(--global-padding);
   background-color: var(--primary);
+  min-height: 12.5rem;
+  position: relative;
+}
+
+.topper-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  padding: 25% 5%;
+  text-align: right;
+  background: linear-gradient(to right, var(--primary), var(--dark));
 }
 
 .sub-header {
@@ -30,13 +43,57 @@
   padding: 16px;
 }
 
-.main-data:nth-child(odd) {
-  background-color: var(--primary-dark);
+.main-data a:nth-child(odd) {
+  background-color: var(--dark);
 }
 
 .cardra {
-  background-color: var(--dark);
   min-height: 240px;
+  padding: 4px 1rem;
+  border: 2px solid var(--heavy);
+}
+
+/* Country Details */
+.country-details {
+  position: relative;
+}
+
+.back-arrow {
+  cursor: pointer;
+}
+
+.country-name {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%, -8%);
+}
+
+.country-details-top {
+  padding: 10% 18% 5% 0;
+}
+
+.stats {
+  background-color: var(--primary-dark);
+  height: 600px;
+}
+
+.stats p:nth-child(odd) {
+  background-color: var(--primary-light);
+  padding: 12px 30%;
+}
+
+.stats p:nth-child(even) {
+  padding: 0 30%;
+}
+
+.text-center {
+  align-self: center;
+}
+
+.source {
 }
 
 @media screen and (max-width: 426px) {
@@ -45,6 +102,25 @@
   }
 
   img {
-    width: 9rem;
+    width: 7rem;
+  }
+
+  .world-map {
+    color: rgb(90, 24, 24);
+    width: 20rem;
+    z-index: -100;
+  }
+
+  .stats p:nth-child(odd) {
+    background-color: var(--primary-light);
+    padding: 12px 8%;
+  }
+
+  .stats p:nth-child(even) {
+    padding: 0 8%;
+  }
+
+  .main-data a:nth-child(odd) {
+    background-color: var(--primary-dark);
   }
 }

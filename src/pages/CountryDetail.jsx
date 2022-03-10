@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { IoIosArrowBack } from 'react-icons/io';
+import { useLocation, Link } from 'react-router-dom';
 import Loader from '../components/Loader';
 import countryMapSrc, { date, dateString } from '../redux/countries/countryCodes';
 
 const CountryDetail = () => {
-  const navigate = useNavigate();
   const location = useLocation();
 
   const [countryDetails, setCountryDetails] = useState([]);
-
-  const handleBack = () => {
-    navigate('/');
-  };
 
   const country = location.pathname
     .match(/[a-zA-Z0-9]/gm)
@@ -35,8 +29,7 @@ const CountryDetail = () => {
   }, []);
 
   return (
-    <div>
-      <IoIosArrowBack onClick={handleBack} />
+    <div className="country-details">
       {!countryDetails.length && <Loader />}
       {countryDetails.map((info) => (
         <div key={info.id}>
@@ -56,16 +49,41 @@ const CountryDetail = () => {
             ))
           ) : (
             <div>
-              <h2>{info.name}</h2>
-              <img src={src} alt={`${info.name} map`} />
-              <p>{info.date}</p>
-              <p>{`Today Confirmed: ${info.today_confirmed}`}</p>
-              <p>{`Today Revovered: ${info.today_recovered}`}</p>
-              <p>{`Today Deaths: ${info.today_deaths}`}</p>
-              <p>{`Today New Confirmed: ${info.today_new_confirmed}`}</p>
-              <p>{`Today New Deaths: ${info.today_new_deaths}`}</p>
-              <p>{`Today New Confirmed: ${info.today_new_open_cases}`}</p>
-              <p>{`Source: ${info.source}`}</p>
+              <h2 className="country-name">{info.name}</h2>
+              <div className="topper flex-btw country-details-top">
+                <img className="country-map" src={src} alt={`${info.name} map`} />
+                <div>
+                  <h6>{`${info.name} Stats`}</h6>
+                  <p>{info.date}</p>
+                  <p>{info.today_confirmed}</p>
+                </div>
+              </div>
+              <div className="sub-header">
+                <div className="text-center">STATS</div>
+              </div>
+              <div className="stats">
+                <p className="flex-btw">
+                  <span>Today Revovered: </span>
+                  <span>{info.today_recovered}</span>
+                </p>
+                <p className="flex-btw">
+                  <span>Today Deaths: </span>
+                  <span>{info.today_deaths}</span>
+                </p>
+                <p className="flex-btw">
+                  <span>Today New Confirmed: </span>
+                  <span>{info.today_new_confirmed}</span>
+                </p>
+                <p className="flex-btw">
+                  <span>Today New Deaths: </span>
+                  <span>{info.today_new_deaths}</span>
+                </p>
+                <p className="flex-btw">
+                  <span>Today New Confirmed: </span>
+                  <span>{info.today_new_open_cases}</span>
+                </p>
+                <p className="source">{`Source: ${info.source}`}</p>
+              </div>
             </div>
           )}
         </div>

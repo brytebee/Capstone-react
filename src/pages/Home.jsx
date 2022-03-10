@@ -34,8 +34,8 @@ const Home = () => {
   return (
     <div>
       <div className="topper flex-btw">
-        <div><img src={map} alt="world map" /></div>
-        <div>
+        <div><img className="world-map" src={map} alt="world map" /></div>
+        <div className="topper-text">
           <h1>All countries</h1>
           <p>{new Intl.NumberFormat().format(total)}</p>
         </div>
