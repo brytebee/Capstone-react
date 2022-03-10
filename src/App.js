@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CountryDetail from './pages/CountryDetail';
+import FourOhFour from './pages/FourOhFour';
 import Home from './pages/Home';
-import RegionDetail from './pages/RegionDetail';
 
 const App = () => (
   <div>
@@ -10,7 +10,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/:country" element={<CountryDetail />} />
-      <Route path="/:country/:region" element={<RegionDetail />} />
+      <Route path="*" element={<FourOhFour />} />
     </Routes>
   </div>
 );
