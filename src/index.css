@@ -1,10 +1,9 @@
 body {
   margin: 0;
-  background-color: var(--primary);
 }
 
 img {
-  width: 200px;
+  width: 14rem;
 }
 
 :root {
@@ -12,7 +11,7 @@ img {
   --primary-light: #3f62a4;
   --primary-dark: #395e9a;
   --dark: #35548b;
-  --global-padding: 1.1rem;
+  --global-padding: 0.5rem;
 }
 
 .flex-btw {

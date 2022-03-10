@@ -1,4 +1,7 @@
 export const navbarDate = new Date();
+// export const date = new Date().toISOString().split('T')[0];
+export const date = '2022-03-09';
+export const dateString = date.toString();
 
 const CountryCode = {
   Afghanistan: 'AF',

@@ -18,19 +18,25 @@
 .sub-header {
   background-color: var(--dark);
   padding: var(--global-padding);
+  color: white;
 }
 
 .main-data {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 50px;
+  gap: 16px;
   grid-auto-rows: minmax(100px, auto);
   background-color: var(--primary-dark);
-  padding: 30px;
+  padding: 16px;
 }
 
 .main-data:nth-child(odd) {
   background-color: var(--primary-dark);
+}
+
+.cardra {
+  background-color: var(--dark);
+  min-height: 240px;
 }
 
 @media screen and (max-width: 426px) {
@@ -39,6 +45,6 @@
   }
 
   img {
-    width: 150px;
+    width: 9rem;
   }
 }

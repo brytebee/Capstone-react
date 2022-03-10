@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import Loader from '../components/Loader';
-import countryMapSrc from '../redux/countries/countryCodes';
+import countryMapSrc, { date, dateString } from '../redux/countries/countryCodes';
 
 const CountryDetail = () => {
   const navigate = useNavigate();
@@ -22,12 +22,10 @@ const CountryDetail = () => {
   const src = countryMapSrc(country);
 
   const fetchCountryData = async () => {
-    const date = new Date().toISOString().split('T')[0];
     const req = await fetch(
       `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`,
     );
     const res = await req.json();
-    const dateString = date.toString();
     const data = Object.values(res.dates[dateString].countries);
     if (data) setCountryDetails(data);
   };

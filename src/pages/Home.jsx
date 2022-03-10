@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import Loader from '../components/Loader';
 import { getCountriesFromAPI } from '../redux/countries/countries';
 import countryMapSrc from '../redux/countries/countryCodes';
@@ -55,8 +56,9 @@ const Home = () => {
                   pathname: `${country.name}`,
                 }}
               >
-                <div>
+                <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
+                  <BsArrowRightCircle />
                   <h5>{country.name}</h5>
                   <p>{country.today_confirmed}</p>
                 </div>
@@ -72,8 +74,9 @@ const Home = () => {
                   pathname: `${country.name}`,
                 }}
               >
-                <div>
+                <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
+                  <BsArrowRightCircle />
                   <h5>{country.name}</h5>
                   <p>{country.today_confirmed}</p>
                 </div>
