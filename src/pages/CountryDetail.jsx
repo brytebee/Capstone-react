@@ -82,7 +82,7 @@ const CountryDetail = () => {
                   <span>Today New Confirmed: </span>
                   <span>{info.today_new_open_cases}</span>
                 </p>
-                <p className="source">{`Source: ${info.source}`}</p>
+                <p className="source text-center"><i>{`Source: ${info.source}`}</i></p>
               </div>
             </div>
           )}
