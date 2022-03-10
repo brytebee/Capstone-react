@@ -44,7 +44,7 @@
 }
 
 .main-data a:nth-child(odd) {
-  background-color: var(--dark);
+  background-color: #102b58;
 }
 
 .cardra {
