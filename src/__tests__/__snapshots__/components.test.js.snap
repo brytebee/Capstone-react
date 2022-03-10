@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot of Covid19STAT component Renders the Loader Component 1`] = `
+exports[`Snapshot of Covid19STAT component Snapshot of the FourOhFour Component 1`] = `
+<div
+  className="four-oh-four"
+>
+  <h2>
+    Oh Oh!
+  </h2>
+  <p>
+    The page you are trying to access is unavailable at the moment...
+  </p>
+  <img
+    alt="Error dispaly"
+    className="four-oh-four-img"
+    src="https://i.pinimg.com/originals/0e/c0/db/0ec0dbf1e9a008acb9955d3246970e15.gif"
+  />
+</div>
+`;
+
+exports[`Snapshot of Covid19STAT component Snapshot of the Loader Component 1`] = `
 <div
   className="spinner"
 >
@@ -26,7 +44,7 @@ exports[`Snapshot of Covid19STAT component Renders the Loader Component 1`] = `
 </div>
 `;
 
-exports[`Snapshot of Covid19STAT component Renders the Navbar Component 1`] = `
+exports[`Snapshot of Covid19STAT component Snapshot of the Navbar Component 1`] = `
 <div
   className="navbarista flex-btw"
 >
