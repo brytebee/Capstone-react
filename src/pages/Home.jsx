@@ -60,19 +60,9 @@ const Home = () => {
               >
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
-<<<<<<< HEAD
-                  <div className="cardra-details d-flex flex-btw">
-                    <BsArrowRightCircle />
-                    <div className="cardra-text">
-                      <h5>{country.name.toUpperCase()}</h5>
-                      <p>{formatNumber(country.today_confirmed)}</p>
-                    </div>
-                  </div>
-=======
                   <BsArrowRightCircle />
                   <h5>{country.name}</h5>
                   <p>{formatNumber(country.today_confirmed)}</p>
->>>>>>> parent of 60ec613 (:lipstick: Update Home page single country element positioning)
                 </div>
               </Link>
             );
@@ -88,19 +78,9 @@ const Home = () => {
               >
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
-<<<<<<< HEAD
-                  <div className="cardra-details d-flex flex-btw">
-                    <BsArrowRightCircle />
-                    <div className="cardra-text">
-                      <h5>{country.name.toUpperCase()}</h5>
-                      <p>{formatNumber(country.today_confirmed)}</p>
-                    </div>
-                  </div>
-=======
                   <BsArrowRightCircle />
                   <h5>{country.name}</h5>
                   <p>{formatNumber(country.today_confirmed)}</p>
->>>>>>> parent of 60ec613 (:lipstick: Update Home page single country element positioning)
                 </div>
               </Link>
             );
