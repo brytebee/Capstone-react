@@ -29,6 +29,25 @@ const Home = () => {
     total += counrty.today_confirmed;
   });
 
+  const style = {
+    main_header:
+      {
+        color: 'var(--whity)',
+        fontWeight: '900',
+      },
+    numbers:
+      {
+        fontSize: '14px',
+        fontWeight: '600',
+        color: 'var(--whity)',
+      },
+    header:
+      {
+        fontWeight: '600',
+        color: 'var(--whity)',
+      },
+  };
+
   useEffect(() => {
     dispatch(getCountriesFromAPI());
   }, []);
@@ -38,8 +57,8 @@ const Home = () => {
       <div className="topper flex-btw">
         <div><img className="world-map" src={map} alt="world map" /></div>
         <div className="topper-text">
-          <h1>GLOBAL COVID19 STATS</h1>
-          <p>{formatNumber(total)}</p>
+          <h1 style={style.main_header}>GLOBAL COVID19 STATS</h1>
+          <p style={style.numbers}>{formatNumber(total)}</p>
         </div>
       </div>
       <div className="sub-header flex-btw">
@@ -61,8 +80,8 @@ const Home = () => {
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
                   <BsArrowRightCircle />
-                  <h5>{country.name}</h5>
-                  <p>{formatNumber(country.today_confirmed)}</p>
+                  <h5 style={style.header}>{country.name}</h5>
+                  <p style={style.numbers}>{formatNumber(country.today_confirmed)}</p>
                 </div>
               </Link>
             );
@@ -79,8 +98,8 @@ const Home = () => {
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
                   <BsArrowRightCircle />
-                  <h5>{country.name}</h5>
-                  <p>{formatNumber(country.today_confirmed)}</p>
+                  <h5 style={style.header}>{country.name}</h5>
+                  <p style={style.numbers}>{formatNumber(country.today_confirmed)}</p>
                 </div>
               </Link>
             );
