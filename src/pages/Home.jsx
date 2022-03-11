@@ -63,7 +63,7 @@ const Home = () => {
                   <div className="cardra-details d-flex flex-btw">
                     <BsArrowRightCircle />
                     <div className="cardra-text">
-                      <h5>{country.name}</h5>
+                      <h5>{country.name.toUpperCase()}</h5>
                       <p>{formatNumber(country.today_confirmed)}</p>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ const Home = () => {
                   <div className="cardra-details d-flex flex-btw">
                     <BsArrowRightCircle />
                     <div className="cardra-text">
-                      <h5>{country.name}</h5>
+                      <h5>{country.name.toUpperCase()}</h5>
                       <p>{formatNumber(country.today_confirmed)}</p>
                     </div>
                   </div>

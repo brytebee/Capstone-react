@@ -21,6 +21,7 @@ a:-webkit-any-link {
   --whity: aliceblue;
   --odd: #102b58;
   --global-padding: 0.5rem;
+  --primary-font: 'Balsamiq Sans', cursive;
 }
 
 .flex-btw {
@@ -33,7 +34,16 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  color: var(--whity);
+  font-weight: 900;
+}
+
 p {
   color: var(--whity);
+}
+
+input {
+  color: var(--dark);
+  background-color: var(--whity);
 }

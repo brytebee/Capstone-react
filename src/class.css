@@ -34,6 +34,7 @@
   grid-auto-rows: minmax(100px, auto);
   background-color: var(--primary-dark);
   padding: 16px;
+  font-family: var(--primary-font);
 }
 
 .main-data a:nth-child(odd) {
