@@ -69,4 +69,4 @@ Thanks for all contributions and reviews.
 
 ## 📝 License
 
-This project is [Microverse](https://www.microverse.org/) licensed.
+This project is [MIT](./MIT.md) licensed.
