@@ -6,16 +6,28 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.1.3",
+    "json-server": "^0.17.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.2.0",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-spinners": "^0.11.0",
+    "react-test-renderer": "^17.0.2",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "git config --global core.autocrlf input && git rm --cached -r . && git reset --hard"
   },
   "eslintConfig": {
     "extends": [
