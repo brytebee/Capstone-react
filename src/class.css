@@ -33,7 +33,7 @@
   gap: 16px;
   grid-auto-rows: minmax(100px, auto);
   background-color: var(--primary-dark);
-  padding: 16px;
+  padding: var(--global-padding);
   font-family: var(--primary-font);
 }
 
