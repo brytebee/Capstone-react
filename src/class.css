@@ -71,7 +71,7 @@
   position: absolute;
   z-index: 10;
   cursor: pointer;
-  top: -5%;
+  top: -6.8%;
   left: 50%;
   transform: translate(-50%, -8%);
   color: #170336;
@@ -114,6 +114,10 @@
 
 .four-oh-four-img {
   width: 40rem;
+}
+
+.icona {
+  font-size: 24px;
 }
 
 @media screen and (max-width: 426px) {

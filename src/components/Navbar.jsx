@@ -14,11 +14,11 @@ const Navbar = () => {
   return (
     <div className="navbarista flex-btw">
       <div className="flex-btw">
-        <IoIosArrowBack onClick={handleBack} />
+        <IoIosArrowBack className="icona" onClick={handleBack} />
       </div>
       <div>
-        <HiOutlineMicrophone />
-        <IoSettingsOutline />
+        <HiOutlineMicrophone className="icona" />
+        <IoSettingsOutline className="icona" />
       </div>
     </div>
   );
