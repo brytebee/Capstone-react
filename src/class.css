@@ -104,6 +104,7 @@
 
 .source {
   color: white;
+  font-size: 12px;
 }
 
 .four-oh-four {
@@ -118,6 +119,10 @@
 
 .icona {
   font-size: 24px;
+}
+
+.region-details {
+  background-color: var(--primary-dark);
 }
 
 @media screen and (max-width: 426px) {
