@@ -30,7 +30,6 @@ const CountryDetail = () => {
 
   return (
     <div>
-      <div>Region Data</div>
       {!countryDetails.length && <Loader />}
       {countryDetails.map((info) => (
         <div key={info.id}>
@@ -42,7 +41,7 @@ const CountryDetail = () => {
                   pathname: `${region.name}`,
                 }}
               >
-                <div className="region-details">
+                <div className="country-name">
                   <h5>{region.name}</h5>
                   <p>{region.today_confirmed}</p>
                 </div>

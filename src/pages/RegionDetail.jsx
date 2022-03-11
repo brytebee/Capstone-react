@@ -52,7 +52,7 @@ const RegionDetail = () => {
                 }}
               >
                 <div>
-                  <h5>{subRegion.name}</h5>
+                  <h5 className="region-details">{subRegion.name}</h5>
                   <p>{subRegion.today_confirmed}</p>
                 </div>
               </Link>
