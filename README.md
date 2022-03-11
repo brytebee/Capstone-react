@@ -1,8 +1,8 @@
-# Capstone-react | COVID19 STATS
+# React | COVID19 STATS
 
 ## Description
 
-A covid19 stats app build as a ReactJS Capstone project at Microverse. Built with React, Redux and API.
+A covid19 stats app build with ReactJS at Microverse. Built with React, Redux and API. I wrote tests using Jest and React Testing Library.
 
 ## Screenshot
 
