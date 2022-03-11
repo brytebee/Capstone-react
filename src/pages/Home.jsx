@@ -60,9 +60,13 @@ const Home = () => {
               >
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
-                  <BsArrowRightCircle />
-                  <h5>{country.name}</h5>
-                  <p>{formatNumber(country.today_confirmed)}</p>
+                  <div className="cardra-details d-flex flex-btw">
+                    <BsArrowRightCircle />
+                    <div className="cardra-text">
+                      <h5>{country.name}</h5>
+                      <p>{formatNumber(country.today_confirmed)}</p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             );
@@ -78,9 +82,13 @@ const Home = () => {
               >
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
-                  <BsArrowRightCircle />
-                  <h5>{country.name}</h5>
-                  <p>{formatNumber(country.today_confirmed)}</p>
+                  <div className="cardra-details d-flex flex-btw">
+                    <BsArrowRightCircle />
+                    <div className="cardra-text">
+                      <h5>{country.name}</h5>
+                      <p>{formatNumber(country.today_confirmed)}</p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             );

@@ -42,13 +42,19 @@
 
 .cardra {
   min-height: 240px;
-  padding: 4px 1rem;
+  padding: 2px 0.5rem;
   border: 2px solid var(--heavy);
 }
 
 .cardra:hover {
   transform: scale(1.05);
   background-color: var(--primary);
+}
+
+.cardra-details {
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
 }
 
 /* Country Details */
