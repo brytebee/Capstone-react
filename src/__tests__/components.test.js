@@ -3,18 +3,17 @@ import renderer from 'react-test-renderer';
 import Loader from '../components/Loader';
 import Navbar from '../components/Navbar';
 import FourOhFour from '../pages/FourOhFour';
-import Home from '../pages/Home'; 
 
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
-  useDispatch: () => mockDispatch
+  useDispatch: () => mockDispatch,
 }));
 
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
- useNavigate: () => mockedUsedNavigate,
+  useNavigate: () => mockedUsedNavigate,
 }));
 
 afterEach(cleanup);
@@ -29,7 +28,7 @@ describe('Snapshot of Covid19STAT component', () => {
     const tree = renderer.create(<Navbar />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  
+
   it('Snapshot of the FourOhFour Component', () => {
     const tree = renderer.create(<FourOhFour />).toJSON();
     expect(tree).toMatchSnapshot();
