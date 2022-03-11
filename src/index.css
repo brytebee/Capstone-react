@@ -24,6 +24,7 @@ a:-webkit-any-link {
 }
 
 .flex-btw {
+  display: flex;
   justify-content: space-between;
 }
 

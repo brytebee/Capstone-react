@@ -85,7 +85,7 @@
 
 .stats {
   background-color: var(--primary-dark);
-  height: 600px;
+  height: 350px;
 }
 
 .stats p:nth-child(odd) {
