@@ -37,13 +37,18 @@
 }
 
 .main-data a:nth-child(odd) {
-  background-color: #102b58;
+  background-color: var(--odd);
 }
 
 .cardra {
   min-height: 240px;
   padding: 4px 1rem;
   border: 2px solid var(--heavy);
+}
+
+.cardra:hover {
+  transform: scale(1.05);
+  background-color: var(--primary);
 }
 
 /* Country Details */

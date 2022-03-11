@@ -6,16 +6,34 @@ img {
   width: 14rem;
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+  color: var(--whity);
+  cursor: pointer;
+}
+
 :root {
   --primary: #5889de;
   --primary-light: #3f62a4;
   --primary-dark: #395e9a;
   --dark: #35548b;
   --heavy: #05132b;
+  --whity: aliceblue;
+  --odd: #102b58;
   --global-padding: 0.5rem;
 }
 
 .flex-btw {
   display: flex;
   justify-content: space-between;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--whity);
 }

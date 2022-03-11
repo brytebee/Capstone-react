@@ -3,9 +3,15 @@ import renderer from 'react-test-renderer';
 import Loader from '../components/Loader';
 import Navbar from '../components/Navbar';
 import FourOhFour from '../pages/FourOhFour';
+import Home from '../pages/Home'; 
+
+const mockDispatch = jest.fn();
+jest.mock('react-redux', () => ({
+  useSelector: jest.fn(),
+  useDispatch: () => mockDispatch
+}));
 
 const mockedUsedNavigate = jest.fn();
-
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
  useNavigate: () => mockedUsedNavigate,

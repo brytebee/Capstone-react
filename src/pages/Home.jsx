@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 import { getCountriesFromAPI } from '../redux/countries/countries';
 import countryMapSrc from '../redux/countries/countryCodes';
 
-const map = 'https://raw.githubusercontent.com/rachidelaid/worldMaps/main/maps/world/vector.svg';
+const map = 'https://bestanimations.com/media/earth/726892854earth-spinning-rotating-animation-14.gif';
 let src = '';
 
 export const formatNumber = (num) => new Intl.NumberFormat().format(num);
@@ -38,7 +38,7 @@ const Home = () => {
       <div className="topper flex-btw">
         <div><img className="world-map" src={map} alt="world map" /></div>
         <div className="topper-text">
-          <h1>All countries</h1>
+          <h1>GLOBAL COVID19 STATS</h1>
           <p>{formatNumber(total)}</p>
         </div>
       </div>
