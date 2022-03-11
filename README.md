@@ -7,6 +7,7 @@ A covid19 stats app build with ReactJS at Microverse. Built with React, Redux an
 ## Screenshot
 
 ![Capstone React](https://user-images.githubusercontent.com/27709832/157883026-89e3ecca-f26d-46c6-9917-2dc1dc072316.png)
+
 `Current screenshot`
 
 ## Live Demo
