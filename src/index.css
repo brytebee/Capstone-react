@@ -8,7 +8,6 @@ img {
 
 a:-webkit-any-link {
   text-decoration: none;
-  color: var(--whity);
   cursor: pointer;
 }
 
@@ -35,12 +34,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--whity);
   font-weight: 900;
 }
 
 p {
-  color: var(--whity);
 }
 
 input {
