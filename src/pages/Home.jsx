@@ -79,7 +79,7 @@ const Home = () => {
               >
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
-                  <BsArrowRightCircle />
+                  <BsArrowRightCircle className="right-arrow" />
                   <h5 style={style.header}>{country.name}</h5>
                   <p style={style.numbers}>{formatNumber(country.today_confirmed)}</p>
                 </div>
@@ -97,7 +97,7 @@ const Home = () => {
               >
                 <div className="cardra">
                   <img src={src} alt={`${country.name} map`} />
-                  <BsArrowRightCircle />
+                  <BsArrowRightCircle className="right-arrow" />
                   <h5 style={style.header}>{country.name}</h5>
                   <p style={style.numbers}>{formatNumber(country.today_confirmed)}</p>
                 </div>

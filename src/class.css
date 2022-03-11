@@ -110,6 +110,11 @@
   width: 40rem;
 }
 
+.right-arrow {
+  color: var(--whity);
+  font-size: larger;
+}
+
 @media screen and (max-width: 426px) {
   .main-data {
     grid-template-columns: repeat(2, 1fr);
