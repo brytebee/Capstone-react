@@ -1,17 +1,20 @@
-# Capstone-react
+# React | COVID19 STATS
 
 ## Description
 
-A covid19 stats app build as a ReactJS Capstone project at Microverse. Built with React, Redux and API.
+A covid19 stats app build with ReactJS at Microverse. Built with React, Redux and API. I wrote tests using Jest and React Testing Library.
 
 ## Screenshot
 
-![image: coming soon](https://paceholder.png)
+![Capstone React](https://user-images.githubusercontent.com/27709832/157883026-89e3ecca-f26d-46c6-9917-2dc1dc072316.png)
+
 `Current screenshot`
 
 ## Live Demo
 
-View the [Coming Soon...](https://placeholder.jpg) here ☕
+View the [live Demo page](https://capstone-react-brytebee.herokuapp.com/) here ☕
+
+[Developer's Description](https://drive.google.com/file/d/18rkjca1hhUgLte_w8rFbBn1GGae5gasu/view?usp=sharing)
 
 ## Built With
 
@@ -66,4 +69,4 @@ Thanks for all contributions and reviews.
 
 ## 📝 License
 
-This project is [Microverse](https://www.microverse.org/) licensed.
+This project is [MIT](./MIT.md) licensed.
