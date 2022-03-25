@@ -1,0 +1,163 @@
+.spinner {
+  padding-left: 50%;
+  padding-top: 10%;
+}
+
+.navbarista {
+  background-color: var(--primary-dark);
+  min-height: 60px;
+  align-items: center;
+  padding: var(--global-padding);
+}
+
+.topper {
+  padding: var(--global-padding);
+  background-color: var(--primary);
+  min-height: 12.5rem;
+  position: relative;
+}
+
+.world-map {
+  width: 24rem;
+}
+
+.sub-header {
+  background-color: var(--dark);
+  padding: var(--global-padding);
+  color: white;
+}
+
+.main-data {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  grid-auto-rows: minmax(100px, auto);
+  background-color: var(--primary-dark);
+  padding: var(--global-padding);
+  font-family: var(--primary-font);
+}
+
+.main-data a:nth-child(odd) {
+  background-color: var(--odd);
+}
+
+.cardra {
+  min-height: 240px;
+  padding: 4px 1rem;
+  border: 2px solid var(--heavy);
+}
+
+.cardra:hover {
+  transform: scale(1.05);
+  background-color: var(--primary);
+}
+
+/* Country Details */
+.country-details {
+  position: relative;
+}
+
+.back-arrow {
+  cursor: pointer;
+}
+
+.country-name {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%, -8%);
+  color: #170336;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.country-details-top {
+  padding: 10% 18% 5% 0;
+}
+
+.stats {
+  background-color: var(--primary-dark);
+  height: 350px;
+}
+
+.stats p:nth-child(odd) {
+  background-color: var(--primary-light);
+  padding: 12px 30%;
+}
+
+.stats p:nth-child(even) {
+  padding: 0 30%;
+}
+
+.text-center {
+  align-self: center;
+}
+
+.source {
+  color: white;
+}
+
+.four-oh-four {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.four-oh-four-img {
+  width: 40rem;
+}
+
+.right-arrow {
+  color: var(--whity);
+  font-size: larger;
+}
+
+@media screen and (max-width: 426px) {
+  .main-data {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    width: 7rem;
+  }
+
+  .world-map {
+    width: 20rem;
+  }
+
+  .country-map {
+    width: 10rem;
+    z-index: 100;
+  }
+
+  .topper-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    padding: 25% 5%;
+    text-align: right;
+    background: linear-gradient(to right, var(--primary), var(--dark));
+  }
+
+  .stats p:nth-child(odd) {
+    background-color: var(--primary-light);
+    padding: 12px 8%;
+  }
+
+  .stats p:nth-child(even) {
+    padding: 0 8%;
+  }
+
+  .main-data a:nth-child(odd) {
+    background-color: var(--primary-dark);
+  }
+
+  .four-oh-four-img {
+    width: 15rem;
+  }
+}
